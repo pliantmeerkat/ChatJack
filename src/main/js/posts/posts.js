@@ -10,7 +10,7 @@ class Posts extends React.Component {
 	render() {
 		return (
       <article className='posts-main'>
-        <h1 className='posts-title'>
+        <h1 className='posts-title' id='posts-title'>
           Posts
         </h1>
   			<div className='posts-items'>
