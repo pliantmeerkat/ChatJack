@@ -2,6 +2,9 @@ import React from 'react'
 import Post from './post'
 
 import PostsBuilder from './postsBuilder'
+import { request } from 'https';
+
+const client = require('../client')
 
 class Posts extends React.Component {
   constructor (props) {
@@ -26,16 +29,16 @@ class Posts extends React.Component {
       </article>
     )
   }
-//{() => this.submitNewPost()}
+  // {() => this.submitNewPost()}
   newPost () {
     if (this.state.makeNewPost) {
       return (
         <div className='postSubDiv'>
-          <form action='#' th:action='@{/}' th:object='${Post}' method='post'>
+          <form>
             <textarea id='msgInput' class='msgInClass' onClick={() => this.setMessageBoxText('')}>
             Whats on your mind?
             </textarea>
-            <input type='submit' value='Submit' id='msgSubmit' />
+            <button type='button' value='Submit' id='msgSubmit' onClick={() => this.submitNewPost()}>Submit</button>
           </form>
         </div>
       )
@@ -51,10 +54,13 @@ class Posts extends React.Component {
   }
 
   getMessagetext () {
-    return document.getElementById('msgInput').textContent
+    return document.getElementById('msgInput').value
   }
 
   submitNewPost () {
+
+    var params = `{"message": "Hello;"}`
+    
     this.setState({makeNewPost: false})
   }
 

@@ -21,11 +21,15 @@ public class Post {
     private String content;
     private long userId;
     private Timestamp created_at;
-
-    public Post() {}
+    
+    public Post(String content) {
+    	setContent(content);
+    }
     
     public void setContent(String content) {
     	this.content = content;
+    	this.userId = 11;
+    	this.created_at = new Timestamp(System.currentTimeMillis());
     }
     
     
