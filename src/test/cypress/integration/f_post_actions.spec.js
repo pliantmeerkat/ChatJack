@@ -11,7 +11,7 @@ describe("Post Route Feature Tests", function () {
 		});
 
 		it("Has a submit posts link", function () {
-			cy.get("#posts-new").should("contain", "New Post");
+			cy.get("#posts-main").should("contain", "New Post");
 		});
 
 		it("Displays a pre-set post correctly", function () {
@@ -25,7 +25,7 @@ describe("Post Route Feature Tests", function () {
 		// below tests will be commented out following user authentication
 
 		it("User can post a text only comment and see it displayed", function () {
-
+			
 		});
 
 		it("User can post a image within comment and see it displayed", function () {

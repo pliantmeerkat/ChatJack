@@ -5,6 +5,7 @@ const client = require('../client');
 class PostsBuilder extends React.Component {
   constructor(props) {
     super(props)
+    this.userLoggedIn = false;
     this.state = {posts: []};
   }
 
@@ -18,7 +19,7 @@ class PostsBuilder extends React.Component {
 		return (
       <Posts posts={this.state.posts}/>
 		)
-	}
+  }
 }
 
 export default PostsBuilder;

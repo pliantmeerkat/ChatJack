@@ -1,15 +1,25 @@
 import React from 'react';
 import Post from './post'
 
+import PostsBuilder from './postsBuilder';
+
 class Posts extends React.Component {
   constructor(props) {
     super(props);
     this.getPosts = this.getPosts.bind(this);
+    this.state = {makeNewPost: false};
   }
 
 	render() {
 		return (
       <article className='posts-main'>
+      <div className = 'menuBar'>
+      <button id='newPostSub' onClick={() => this.createNewPost()}>New Post</button>
+      <button id='userLogin'  onClick={() => this.userLogin()}>Log In</button>
+      <button id='userSignUp' onClick={() => this.userSignUp()}>Sign Up</button>
+      <button id='userLogout' onClick={() => this.userLogOut()}>Log Out</button>
+      </div>
+      {this.newPost()}
         <h1 className='posts-title' id='posts-title'>
           Posts
         </h1>
@@ -18,7 +28,36 @@ class Posts extends React.Component {
   			</div>
       </article>
 		)
-	}
+  }
+
+  newPost() {
+    if(this.state.makeNewPost)
+    {
+      return (
+      <div className='postSubDiv'>
+        <form id='newPostSub' method='post'>
+          <textarea id='msgInput' class='msgInClass'>Whats on your mind?</textarea>
+          <input type='submit' value='Submit' id='msgSubmit'/>
+        </form>
+      </div>
+      )
+    }
+  }
+
+ createNewPost() {
+    this.setState({makeNewPost: true});
+  }
+
+  userLogin() {
+  }
+
+  userSignUp() {
+
+  }
+
+  userLogOut() {
+
+  }
 
   getPosts() {
     return this.props.posts.map(post =>
