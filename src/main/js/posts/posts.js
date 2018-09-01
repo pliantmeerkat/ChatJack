@@ -15,9 +15,6 @@ class Posts extends React.Component {
       <article className='posts-main'>
       <div className = 'menuBar'>
       <button id='newPostSub' onClick={() => this.createNewPost()}>New Post</button>
-      <button id='userLogin'  onClick={() => this.userLogin()}>Log In</button>
-      <button id='userSignUp' onClick={() => this.userSignUp()}>Sign Up</button>
-      <button id='userLogout' onClick={() => this.userLogOut()}>Log Out</button>
       </div>
       {this.newPost()}
         <h1 className='posts-title' id='posts-title'>
@@ -35,8 +32,10 @@ class Posts extends React.Component {
     {
       return (
       <div className='postSubDiv'>
-        <form id='newPostSub' method='post'>
-          <textarea id='msgInput' class='msgInClass'>Whats on your mind?</textarea>
+        <form id='newPostSub' method='post' action={() => this.submitNewPost()}>
+          <textarea id='msgInput' class='msgInClass' onClick={() => document.getElementById('msgInput').value = ''}>
+            Whats on your mind?
+          </textarea>
           <input type='submit' value='Submit' id='msgSubmit'/>
         </form>
       </div>
@@ -45,18 +44,13 @@ class Posts extends React.Component {
   }
 
  createNewPost() {
+   console.log(1233);
     this.setState({makeNewPost: true});
   }
 
-  userLogin() {
-  }
-
-  userSignUp() {
-
-  }
-
-  userLogOut() {
-
+  submitNewPost() {
+    var params = document.getElementById('msgInput').textContent;
+    this.setState({makeNewPost: false});
   }
 
   getPosts() {
