@@ -20,7 +20,7 @@ public class User {
 	protected String email;
 	
 	private User() {
-		
+		 
 	}
 	
 	public User(String username, String password, String email) {

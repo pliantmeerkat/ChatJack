@@ -1,11 +1,10 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+const React = require('react')
+const ReactDOM = require('react-dom')
 
 import SessionRunner from './SessionRunner'
 
 class App extends React.Component {
-
-  render() {
+  render () {
     return (
       <SessionRunner />
     )
@@ -13,6 +12,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-	<App />,
-	document.getElementById('app')
+  <App />,
+  document.getElementById('app')
 )
