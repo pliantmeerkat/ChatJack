@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.GenerationType;
 
 import lombok.Data;
@@ -20,6 +23,7 @@ public class Post {
     private Long id;
     private String content;
     private long userId;
+    @CreationTimestamp
     private Timestamp created_at;
     
     public Post(String content) {
@@ -28,13 +32,15 @@ public class Post {
     
     public void setContent(String content) {
     	this.content = content;
-    	this.userId = 11;
-    	this.created_at = new Timestamp(System.currentTimeMillis());
     }
     
     
     public String getContent() {
     	return this.content;
+    }
+    
+    public Timestamp getCreated_at() {
+    	return this.created_at;
     }
 
 }

@@ -5,7 +5,6 @@ CREATE TABLE posts (
   id bigserial PRIMARY KEY,
   content varchar(250) NOT NULL,
   created_at timestamp NOT NULL,
-  user_id int NOT NULL
 );
 
 CREATE TABLE users (
