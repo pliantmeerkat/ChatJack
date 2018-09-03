@@ -22,9 +22,10 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
-    private long userId;
     @CreationTimestamp
     private Timestamp created_at;
+    
+    private Post() {}
     
     public Post(String content) {
     	setContent(content);

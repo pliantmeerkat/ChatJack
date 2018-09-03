@@ -58,9 +58,15 @@ class Posts extends React.Component {
   }
 
   submitNewPost () {
-
-    var params = `{"message": "Hello;"}`
-    
+  	fetch('/api/posts', {
+	  method: 'post',
+	  headers: {
+	    'Accept': 'application/json',
+	    'Content-Type': 'application/json'
+	  },
+	  body: JSON.stringify({'content' : this.getMessagetext()})
+	}).then(res=>res.json())
+	  .then(res => console.log(res));
     this.setState({makeNewPost: false})
   }
 

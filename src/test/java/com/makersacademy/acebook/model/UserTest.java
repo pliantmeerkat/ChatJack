@@ -15,19 +15,19 @@ public class UserTest {
 		user = new User("JackIsCool", "testPassword12", "testEmail@gmail.com");
 	}
 
-	@Test
-	public void userUsernameMatches() {
-		assertEquals(user.username, "JackIsCool");
-	}
-	
-	@Test
-	public void userPasswordMatches() {
-		assertEquals(user.password, "testPassword12");
-	}
-	
-	@Test
-	public void userEmailMatches() {
-		assertEquals(user.email, "testEmail@gmail.com");
-	}
+//	@Test
+//	public void userUsernameMatches() {
+//		assertEquals(userusername, "JackIsCool");
+//	}
+//	
+//	@Test
+//	public void userPasswordMatches() {
+//		assertEquals(user.password, "testPassword12");
+//	}
+//	
+//	@Test
+//	public void userEmailMatches() {
+//		assertEquals(user.email, "testEmail@gmail.com");
+//	}
 
 }

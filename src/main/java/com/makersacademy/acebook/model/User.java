@@ -1,9 +1,13 @@
 package com.makersacademy.acebook.model;
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Data;
 
@@ -14,10 +18,13 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected long id;
-	protected String username;
-	protected String password;
-	protected String email;
+	private long id;
+	@CreationTimestamp
+	private Timestamp created_at;
+	private String username;
+	private String password;
+	private String email;
+	
 	
 	private User() {
 		 
@@ -27,6 +34,22 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+	}
+	
+	public String getUsername() {
+		return this.username;
+	}
+	
+	public String getPassword() {
+		return this.password;
+	}
+	
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public Timestamp getCreated_at() {
+		return this.created_at;
 	}
 	
 }
